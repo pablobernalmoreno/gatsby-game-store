@@ -39,5 +39,19 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-pocketbase`,
+      options: {
+        server: {
+          protocol: "http",
+          address: "127.0.0.1",
+          port: "8090",
+        },
+        auth: {
+          user: "pbm1998@hotmail.com",
+          password: "pocketPassword",
+        },
+      },
+    },
   ],
 }

@@ -1,24 +1,23 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
     style={{
-      margin: `0 auto`,
-      padding: `var(--space-4) var(--size-gutter)`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
+      display: "flex",
+      justifyContent: "space-between",
+      width: "100%",
+      background: "#F1F6F9",
     }}
   >
     <Link
       to="/"
       style={{
-        fontSize: `var(--font-sm)`,
         textDecoration: `none`,
+        color: "#212A3E",
       }}
     >
-      {siteTitle}
+      Home
     </Link>
     <img
       alt="Gatsby logo"
