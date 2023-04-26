@@ -1,8 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
+import { slugify } from "../../utils"
 
 const Card = ({ name, description, image, inStock, price }) => {
   const shortDescription = `${description?.slice(0, 250)}...`
+
+  const slugName = slugify(name)
+
   return (
     <div
       style={{
@@ -12,16 +16,37 @@ const Card = ({ name, description, image, inStock, price }) => {
         background: "#F1F6F9",
         borderRadius: "10px",
       }}
+      onClick={() => {
+        navigate(`/${slugName}`)
+      }}
     >
-      <h2 style={{ margin: 0 }}>{name}</h2>
+      <h2 style={{ margin: 0, color: "#212A3E" }}>{name}</h2>
       <img
         style={{ margin: 0, height: "13rem", width: "100%" }}
         src={image}
         alt={name}
       />
-      <h4 style={{ margin: 0 }}>{shortDescription}</h4>
-      <p style={{ margin: 0 }}>Currently in stock: {inStock}</p>
-      <p style={{ margin: 0 }}>Price: {price}</p>
+      <h4 style={{ margin: 0, color: "#212A3E" }}>{shortDescription}</h4>
+      <p
+        style={{
+          margin: "1rem 0",
+          color: "#212A3E",
+          display: "block",
+          fontWeight: "bold",
+        }}
+      >
+        Currently in stock: {inStock}
+      </p>
+      <p
+        style={{
+          margin: 0,
+          color: "#212A3E",
+          display: "block",
+          fontWeight: "bold",
+        }}
+      >
+        price: {price}
+      </p>
     </div>
   )
 }
