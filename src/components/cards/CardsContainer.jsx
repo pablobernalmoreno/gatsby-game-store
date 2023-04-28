@@ -9,44 +9,16 @@ const Card = ({ name, description, image, inStock, price }) => {
 
   return (
     <div
-      style={{
-        width: "25rem",
-        height: "30rem",
-        margin: "10px",
-        background: "#F1F6F9",
-        borderRadius: "10px",
-      }}
+      className="card-container"
       onClick={() => {
         navigate(`/${slugName}`)
       }}
     >
-      <h2 style={{ margin: 0, color: "#212A3E" }}>{name}</h2>
-      <img
-        style={{ margin: 0, height: "13rem", width: "100%" }}
-        src={image}
-        alt={name}
-      />
-      <h4 style={{ margin: 0, color: "#212A3E" }}>{shortDescription}</h4>
-      <p
-        style={{
-          margin: "1rem 0",
-          color: "#212A3E",
-          display: "block",
-          fontWeight: "bold",
-        }}
-      >
-        Currently in stock: {inStock}
-      </p>
-      <p
-        style={{
-          margin: 0,
-          color: "#212A3E",
-          display: "block",
-          fontWeight: "bold",
-        }}
-      >
-        price: {price}
-      </p>
+      <h2 className="card-title">{name}</h2>
+      <img className="card-image" src={image} alt={name} />
+      <h4 className="card-description">{shortDescription}</h4>
+      <p className="card-stock">Currently in stock: {inStock}</p>
+      <p className="card-price">price: {price}</p>
     </div>
   )
 }
@@ -72,14 +44,7 @@ const CardsContainer = () => {
   `)
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        cursor: "pointer",
-      }}
-    >
+    <div className="cards-container">
       {edges.map(edge => (
         <Card
           name={edge.node.name}

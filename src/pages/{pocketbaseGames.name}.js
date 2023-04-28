@@ -17,25 +17,13 @@ const GameTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <h1 style={{ color: "#9BA4B5" }}>{name}</h1>
-      <section style={{ display: "flex" }}>
-        <img
-          src={image}
-          alt={name}
-          style={{ width: "50rem", height: "30rem" }}
-        />
-        <section style={{ display: "flex", flexDirection: "column" }}>
-          <h3 style={{ margin: "2rem", color: "#9BA4B5" }}>{description}</h3>
-          <p
-            style={{ margin: "1rem 2rem", fontSize: "24px", color: "#F1F6F9" }}
-          >
-            Current price: ${price}
-          </p>
-          <p
-            style={{ margin: "1rem 2rem", fontSize: "24px", color: "#F1F6F9" }}
-          >
-            Currently in stock: {inStock}
-          </p>
+      <h1 className="game-page__title">{name}</h1>
+      <section className="game-page__container">
+        <img className="game-page__image" src={image} alt={name} />
+        <section className="game-page__info__container">
+          <h3 className="game-page__description">{description}</h3>
+          <p className="game-page__price">Current price: ${price}</p>
+          <p className="game-page__stock">Currently in stock: {inStock}</p>
         </section>
       </section>
     </Layout>
