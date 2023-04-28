@@ -1,0 +1,134 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #f1f6f9;
+}
+
+.header-home__link {
+  text-decoration: none;
+  color: #212a3e;
+}
+
+.header-image {
+  margin: 0;
+}
+
+.layout-container {
+  background: #394867;
+}
+
+.layout-footer {
+  width: 100%;
+  color: #f1f6f9;
+  background: #212a3e;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: "pointer";
+}
+
+.card-container {
+  width: 25rem;
+  height: 30rem;
+  margin: 10px;
+  background: #f1f6f9;
+  border-radius: 10px;
+}
+
+.card-title {
+  margin: 0;
+  color: #212a3e;
+}
+
+.card-image {
+  margin: 0;
+  height: 13rem;
+  width: 100%;
+}
+
+.card-description {
+  margin: 0;
+  color: #212a3e;
+}
+
+.card-stock {
+  margin: 1rem 0;
+  color: #212a3e;
+  display: block;
+  font-weight: bold;
+}
+
+.card-price {
+  margin: 0;
+  color: #212a3e;
+  display: block;
+  font-weight: bold;
+}
+
+.search-input {
+  margin: 8px 0 0;
+  font-size: 24px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-input__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input__title {
+  color: #f1f6f9;
+  margin: 0;
+  font-size: 48px;
+}
+
+.search-button {
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: #f1f6f9;
+  color: #212a3e;
+  border-color: #212a3e;
+}
+
+.game-page__title {
+  color: #9ba4b5;
+}
+
+.game-page__container {
+  display: flex;
+}
+
+.game-page__image {
+  width: 50rem;
+  height: 30rem;
+}
+
+.game-page__info__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-page__description {
+  margin: 2rem;
+  color: #9ba4b5;
+}
+
+.game-page__price {
+  margin: 1rem 2rem;
+  font-size: 24px;
+  color: #f1f6f9;
+}
+
+.game-page__stock {
+  margin: 1rem 2rem;
+  font-size: 24px;
+  color: #f1f6f9;
+}

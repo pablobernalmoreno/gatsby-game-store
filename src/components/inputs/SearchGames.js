@@ -10,34 +10,12 @@ export const SearchGames = () => {
   }
 
   return (
-    <article
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <h1 style={{ color: "#F1F6F9", margin: 0, fontSize: "48px" }}>
-        Look around our games!
-      </h1>
+    <article className="search-input__container">
+      <h1 className="search-input__title">Look around our games!</h1>
       <section>
-        <input
-          style={{
-            margin: "8px 0 0",
-            fontSize: "24px",
-            borderRadius: "5px",
-            border: "none",
-          }}
-          onChange={handleChange}
-        />
+        <input className="search-input" onChange={handleChange} />
         <button
-          style={{
-            fontSize: "24px",
-            borderRadius: "5px",
-            backgroundColor: "#F1F6F9",
-            color: "#212A3E",
-            borderColor: "#212A3E",
-          }}
+          className="search-button"
           onClick={() => {
             navigate(`/${name}`)
           }}
