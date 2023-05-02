@@ -18,14 +18,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className="layout-container">
+      <main className="layout-container">
         <main>{children}</main>
         <footer className="layout-footer">
           © {new Date().getFullYear()} PBM Video Game Store &middot; Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
-      </div>
+      </main>
     </>
   )
 }
