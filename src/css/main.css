@@ -218,7 +218,8 @@
 
 .comment-card {
   background-color: #9ba4b5;
-  width: 80%;
+  min-width: 400px;
+  max-width: 600px;
 }
 
 .comment-title {

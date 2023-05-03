@@ -12,6 +12,7 @@ const GameTemplate = ({ data }) => {
     userComment: "",
     userRating: 1,
     user: "",
+    posted: false,
   })
 
   const {
@@ -26,8 +27,6 @@ const GameTemplate = ({ data }) => {
       pocketbase_id,
     },
   } = data
-
-  const MAX_RATING = 5
 
   const updatedCommentData = {
     name: name,
@@ -47,8 +46,8 @@ const GameTemplate = ({ data }) => {
   }
 
   const handlePost = async data => {
-    console.log(42, data)
     await pb.collection("games").update(pocketbase_id, data)
+    setUserComments({ ...userComments, posted: true })
   }
 
   const handleChange = e => {
@@ -92,59 +91,87 @@ const GameTemplate = ({ data }) => {
           })}
         </article>
         <section className="game-page__comments-form">
-          <h2 className="game-page__comments-title">
-            Please leave your comment!
-          </h2>
-          <section>
-            <button
-              className="game-page__user-rating"
-              onClick={() => handleRating(1)}
-            >
-              {userComments.userRating >= 1 ? <FullStarIcon /> : <StarIcon />}
-            </button>
-            <button
-              className="game-page__user-rating"
-              onClick={() => handleRating(2)}
-            >
-              {userComments.userRating >= 2 ? <FullStarIcon /> : <StarIcon />}
-            </button>
-            <button
-              className="game-page__user-rating"
-              onClick={() => handleRating(3)}
-            >
-              {userComments.userRating >= 3 ? <FullStarIcon /> : <StarIcon />}
-            </button>
-            <button
-              className="game-page__user-rating"
-              onClick={() => handleRating(4)}
-            >
-              {userComments.userRating >= 4 ? <FullStarIcon /> : <StarIcon />}
-            </button>
-            <button
-              className="game-page__user-rating"
-              onClick={() => handleRating(5)}
-            >
-              {userComments.userRating >= 5 ? <FullStarIcon /> : <StarIcon />}
-            </button>
-          </section>
-          <input
-            id="user"
-            placeholder="Your name"
-            className="game-page__user-comment"
-            onChange={handleChange}
-          />
-          <textarea
-            id="userComment"
-            placeholder="Your comment"
-            className="game-page__user-comment"
-            onChange={handleChange}
-          />
-          <button
-            className="game-page__user-comment__submit-button"
-            onClick={() => handlePost(updatedCommentData)}
-          >
-            submit
-          </button>
+          {userComments.posted ? (
+            <h2 className="game-page__comments-title">
+              Thanks for the comment!
+            </h2>
+          ) : (
+            <>
+              <h2 className="game-page__comments-title">
+                Please leave your comment!
+              </h2>
+              <section>
+                <button
+                  className="game-page__user-rating"
+                  onClick={() => handleRating(1)}
+                >
+                  {userComments.userRating >= 1 ? (
+                    <FullStarIcon />
+                  ) : (
+                    <StarIcon />
+                  )}
+                </button>
+                <button
+                  className="game-page__user-rating"
+                  onClick={() => handleRating(2)}
+                >
+                  {userComments.userRating >= 2 ? (
+                    <FullStarIcon />
+                  ) : (
+                    <StarIcon />
+                  )}
+                </button>
+                <button
+                  className="game-page__user-rating"
+                  onClick={() => handleRating(3)}
+                >
+                  {userComments.userRating >= 3 ? (
+                    <FullStarIcon />
+                  ) : (
+                    <StarIcon />
+                  )}
+                </button>
+                <button
+                  className="game-page__user-rating"
+                  onClick={() => handleRating(4)}
+                >
+                  {userComments.userRating >= 4 ? (
+                    <FullStarIcon />
+                  ) : (
+                    <StarIcon />
+                  )}
+                </button>
+                <button
+                  className="game-page__user-rating"
+                  onClick={() => handleRating(5)}
+                >
+                  {userComments.userRating >= 5 ? (
+                    <FullStarIcon />
+                  ) : (
+                    <StarIcon />
+                  )}
+                </button>
+              </section>
+              <input
+                id="user"
+                placeholder="Your name"
+                className="game-page__user-comment"
+                onChange={handleChange}
+              />
+              <textarea
+                id="userComment"
+                placeholder="Your comment"
+                className="game-page__user-comment"
+                onChange={handleChange}
+              />
+              <button
+                className="game-page__user-comment__submit-button"
+                onClick={() => handlePost(updatedCommentData)}
+              >
+                submit
+              </button>
+            </>
+          )}
         </section>
       </article>
     </Layout>
