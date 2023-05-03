@@ -8,7 +8,7 @@ const Card = ({ name, description, image, inStock, price }) => {
   const slugName = slugify(name)
 
   return (
-    <div
+    <section
       className="card-container"
       onClick={() => {
         navigate(`/${slugName}`)
@@ -19,7 +19,7 @@ const Card = ({ name, description, image, inStock, price }) => {
       <h4 className="card-description">{shortDescription}</h4>
       <p className="card-stock">Currently in stock: {inStock}</p>
       <p className="card-price">price: {price}</p>
-    </div>
+    </section>
   )
 }
 
@@ -44,7 +44,7 @@ const CardsContainer = () => {
   `)
 
   return (
-    <div className="cards-container">
+    <article className="cards-container">
       {edges.map(edge => (
         <Card
           name={edge.node.name}
@@ -54,7 +54,7 @@ const CardsContainer = () => {
           price={edge.node.price}
         />
       ))}
-    </div>
+    </article>
   )
 }
 

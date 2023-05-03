@@ -41,6 +41,11 @@
   border-radius: 10px;
 }
 
+.card-container:hover {
+  background-color: #9ba4b5;
+  cursor: pointer;
+}
+
 .card-title {
   margin: 0;
   color: #212a3e;
@@ -98,6 +103,13 @@
   border-color: #212a3e;
 }
 
+.search-button:hover {
+  background-color: #9ba4b5;
+  color: #f1f6f9;
+  border-color: #f1f6f9;
+  cursor: pointer;
+}
+
 .game-page__title {
   color: #9ba4b5;
 }
@@ -121,6 +133,11 @@
   color: #9ba4b5;
 }
 
+.game-page__inventory {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .game-page__price {
   margin: 1rem 2rem;
   font-size: 24px;
@@ -131,4 +148,80 @@
   margin: 1rem 2rem;
   font-size: 24px;
   color: #f1f6f9;
+}
+
+.game-page__tags {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.game-page__tag {
+  background-color: #9ba4b5;
+  color: #212a3e;
+  border-radius: 15px;
+  margin: 1rem;
+  padding: 5px;
+}
+
+.game-page__comments {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-page__comments-title {
+  font-size: 2rem;
+  color: #f1f6f9;
+  width: 500px;
+  text-align: center;
+}
+
+.game-page__comments-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15rem;
+  align-items: center;
+}
+
+.game-page__user-rating {
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+
+.game-page__user {
+  margin: 4px 0;
+  font-size: 2rem;
+}
+
+.game-page__user-comment {
+  margin: 4px 0;
+  font-size: 2rem;
+}
+
+.game-page__user-comment__submit-button {
+  margin: 4px 0;
+  font-size: 24px;
+  border-radius: 5px;
+  width: 60%;
+  background-color: #f1f6f9;
+  color: #212a3e;
+  border-color: #212a3e;
+}
+
+.game-page__user-comment__submit-button:hover {
+  background-color: #9ba4b5;
+  color: #f1f6f9;
+  border-color: #f1f6f9;
+  cursor: pointer;
+}
+
+.comment-card {
+  background-color: #9ba4b5;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.comment-title {
+  color: #212a3e;
 }
