@@ -11,13 +11,12 @@ export const CommentCard = ({ comment, rating, user }) => {
 
   return (
     <section className="comment-card">
-      <h4 className="comment-title">
+      <h3 className="comment-rating">
         Rating of:
         {STARS.map(star => (rating >= star ? <FullStarIcon /> : <StarIcon />))}
-      </h4>
-      {comment}
-
-      {user}
+      </h3>
+      <h4 className="comment-user">Submitted by: {user}</h4>
+      <p className="comment-comment">{comment}</p>
     </section>
   )
 }

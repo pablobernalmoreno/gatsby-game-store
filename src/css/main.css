@@ -222,6 +222,16 @@
   max-width: 600px;
 }
 
-.comment-title {
+.comment-rating {
+  color: #212a3e;
+  margin-bottom: 0rem;
+}
+
+.comment-user {
+  margin: 0 0 1rem 0;
+  color: #212a3e;
+}
+
+.comment-comment {
   color: #212a3e;
 }
